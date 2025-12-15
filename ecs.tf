@@ -68,7 +68,7 @@ resource "aws_ecs_service" "aws-ecs-service" {
   cluster                = var.ecs_cluster_arn
   task_definition        = "${aws_ecs_task_definition.aws-ecs-task.family}:${max(aws_ecs_task_definition.aws-ecs-task.revision, data.aws_ecs_task_definition.main.revision)}"
   desired_count          = var.desired_count
-  force_new_deployment   = false
+  force_new_deployment   = true
   enable_execute_command = true
   propagate_tags         = "SERVICE"
 
