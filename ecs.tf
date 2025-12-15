@@ -1,5 +1,11 @@
+data "aws_region" "current" {}
+
 locals {
-  task_env_variables = concat(var.environment_variables, [{ name : "ENVIRONMENT", value : var.environment }])
+  // AWS_REGION is needed to have your aws default config correctly manage the region.
+  task_env_variables = concat(var.environment_variables, [
+    { name : "ENV", value : var.environment },
+    { name : "AWS_REGION", value : data.aws_region.current }
+  ])
 }
 
 resource "aws_ecs_task_definition" "aws-ecs-task" {

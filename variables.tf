@@ -8,16 +8,6 @@ variable "environment" {
   description = "The environment to deploy the api service to."
 }
 
-variable "ecs_cluster_arn" {
-  type        = string
-  description = "The ARN of the ecs cluster to deploy the service on."
-}
-
-variable "ecs_cluster_name" {
-  type        = string
-  description = "The name of the ecs cluster to deploy the service on."
-}
-
 variable "service_name" {
   type        = string
   nullable    = false
@@ -27,6 +17,16 @@ variable "service_name" {
 ########################################################################################################################
 ### ECS Cluster/Service
 ########################################################################################################################
+
+variable "ecs_cluster_arn" {
+  type        = string
+  description = "The ARN of the ecs cluster to deploy the service on."
+}
+
+variable "ecs_cluster_name" {
+  type        = string
+  description = "The name of the ecs cluster to deploy the service on."
+}
 
 variable "subnets" {
   type        = set(string)
