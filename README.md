@@ -77,6 +77,8 @@ No modules.
 | <a name="input_force_new_deployment"></a> [force\_new\_deployment](#input\_force\_new\_deployment) | Whether to force a new deployment when updating the ecs service. | `bool` | `false` | no |
 | <a name="input_image"></a> [image](#input\_image) | The docker image to use for the container. | `string` | n/a | yes |
 | <a name="input_lb_security_group_id"></a> [lb\_security\_group\_id](#input\_lb\_security\_group\_id) | The Load Balancer's Security Group ID | `string` | n/a | yes |
+| <a name="input_log_add_source"></a> [log\_add\_source](#input\_log\_add\_source) | Default value for LOG\_ADD\_SOURCE. | `bool` | `false` | no |
+| <a name="input_log_level"></a> [log\_level](#input\_log\_level) | Default value for LOG\_LEVEL. | `string` | `"info"` | no |
 | <a name="input_max_capacity"></a> [max\_capacity](#input\_max\_capacity) | The maximum amount of the tasks to run. | `number` | `0` | no |
 | <a name="input_memory"></a> [memory](#input\_memory) | The memory value to give to the ecs task. | `number` | `512` | no |
 | <a name="input_min_capacity"></a> [min\_capacity](#input\_min\_capacity) | The minimum amount of the tasks to run. | `number` | `0` | no |

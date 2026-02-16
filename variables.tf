@@ -82,6 +82,18 @@ variable "environment_variables" {
   description = "The environment variables to use for the service."
 }
 
+variable "log_level" {
+  type        = string
+  default     = "info"
+  description = "Default value for LOG_LEVEL."
+}
+
+variable "log_add_source" {
+  type        = bool
+  default     = false
+  description = "Default value for LOG_ADD_SOURCE."
+}
+
 variable "secrets" {
   type = list(object({
     name      = string
