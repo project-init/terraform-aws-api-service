@@ -82,6 +82,23 @@ variable "environment_variables" {
   description = "The environment variables to use for the service."
 }
 
+variable "log_level" {
+  type        = string
+  default     = "info"
+  description = "Default value for LOG_LEVEL."
+
+  validation {
+    condition     = contains(["debug", "info", "warn", "error"], var.log_level)
+    error_message = "Log level must be one of: debug, info, warn, error."
+  }
+}
+
+variable "log_add_source" {
+  type        = bool
+  default     = false
+  description = "Default value for LOG_ADD_SOURCE."
+}
+
 variable "secrets" {
   type = list(object({
     name      = string

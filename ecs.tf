@@ -4,7 +4,9 @@ locals {
   task_env_variables = concat(var.environment_variables, [
     { name : "ENV", value : var.environment },
     // This is a commonly overlooked variable as it is needed to have your aws default config correctly manage the region.
-    { name : "AWS_REGION", value : data.aws_region.current.region }
+    { name : "AWS_REGION", value : data.aws_region.current.region },
+    { name : "LOG_LEVEL", value : var.log_level },
+    { name : "LOG_ADD_SOURCE", value : tostring(var.log_add_source) }
   ])
 }
 
